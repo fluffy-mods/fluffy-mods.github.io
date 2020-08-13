@@ -1,6 +1,7 @@
 language: ruby
 rvm:
-  - 2.3
+  - 2.6.6
 script:
+  - gem install bundler
   - bundle update --bundler
   - bundle exec jekyll build

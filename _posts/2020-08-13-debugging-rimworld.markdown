@@ -33,10 +33,10 @@ For RimWorld 1.1, I was able to get dnSpy attached by just using a patched Mono 
 We'll need to get a copy of the debug versions of the unity player. These are distributed with Unity, so we'll need to get a copy of Unity. But first, we need to find out which version of Unity we need.
 
 - navigate to the RimWorld install folder, and open the properties pane for `UnityPlayer.dll`. Take a note of the file version in the details tab.  
-  ![UnityPlayer.dll file version](public/media/img/UnityPlayer-version.png)
+  ![UnityPlayer.dll file version](/public/media/img/UnityPlayer-version.png)
 - take your favourite browser over to the Unity download archive: <https://unity3d.com/get-unity/download/archive>, and find the release that corresponds to the version in the previous step. At the time of writing this guide (the RimWorld 1.2 release), that would be `2019.2.17`.
 - Download the (64 bit) Unity Editor. It's just short of 1GB, so this may take a little while.  
-  ![Unity Editor download](public/media/img/UnityEditor-download.png)
+  ![Unity Editor download](/public/media/img/UnityEditor-download.png)
 - This package includes the files we need. We can either install the editor and get the files after installation is done, or directly extract the files from the installer.
   - Install the editor  
     OR
@@ -108,15 +108,15 @@ The final step is actually attaching the debugger.
 - open dnSpy
 - in the debug menu, click "Start Debugging...".  
   Alternatively, you can also click the '▶ Start' button in the toolbar, or press <kbd>F5</kbd>  
-  ![dnSpy start debugging](public/media/img/dnSpy-start-debugging.png)
+  ![dnSpy start debugging](/public/media/img/dnSpy-start-debugging.png)
 - in the window that opens, navigate to the RimWorld executable. Leave the other settings as they are.  
-  ![dnSpy find executable](public/media/img/dnSpy-find-executable.png)
+  ![dnSpy find executable](/public/media/img/dnSpy-find-executable.png)
 - press 'OK'. RimWorld will now open, and dnSpy will have an orange border to indicate it is actively debugging.
 - check that the debugger is attached to RimWorld;
   - in the debug menu, select "windows" and then "processes".  
-    ![dnSpy debug processes](public/media/img/dnSpy-debug-processes.png)
+    ![dnSpy debug processes](/public/media/img/dnSpy-debug-processes.png)
   - you should see the RimWorld process in the panel that appears;  
-    ![dnSpy processes window](public/media/img/dnSpy-processes-window.png)  
+    ![dnSpy processes window](/public/media/img/dnSpy-processes-window.png)  
     note that this seems to be a bit of a hit-or-miss, possibly timing related.
   - If the RimWorld process is not listed, we can manually attach to it;
     - make sure RimWorld is actually running
@@ -140,7 +140,7 @@ If you need help in using a debugger, there are other guides for that. Here are 
    - find the module for the mod you're debugging.  
      Annoyingly, there's no real way to find out which assembly you're opening without looking at the contained namespaces, so this may take some trial and error. The modules do appear to be listed in the order they were loaded.
    - add breakpoints by clicking in the left margin of the code window  
-     ![dnSpy breakpoints](public/media/img/dnSpy-breakpoints.png)
+     ![dnSpy breakpoints](/public/media/img/dnSpy-breakpoints.png)
 
 # Updates
 

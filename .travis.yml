@@ -1,4 +1,6 @@
 language: ruby
 rvm:
   - 2.3
-script: "bundle exec jekyll build"
+script:
+  - bundle update --bundler
+  - bundle exec jekyll build

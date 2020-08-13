@@ -67,7 +67,7 @@ finally, in the `RimWorldWin64_Data` folder of your RimWorld installation;
 
 ## Patched Mono library
 
-The final step in the process is obtaining a patched version of Mono. I've had a debugger running on the 1.1 version of RimWorld by using just this step, and skipping the debug executables in the previous step. On 1.2, using the debug executables seems to be necessary and sufficient. I'm honestly not sure if this step is still necessary, but it (probably) won't hurt either.
+The next step in the process is obtaining a patched version of Mono. I've had a debugger running on the 1.1 version of RimWorld by using just this step, and skipping the debug executables in the previous step. On 1.2, using the debug executables seems to be necessary and sufficient. I'm honestly not sure if this step is still necessary, but it (probably) won't hurt either.
 
 dnSpy provides a patched version of the Unity branch of Mono. We're going to replace RimWorlds' version of Mono with this patched version. The file we're looking for is `mono-2.0-bdwgc.dll`. There are three main ways to get this file;
 
@@ -141,6 +141,18 @@ If you need help in using a debugger, there are other guides for that. Here are 
      Annoyingly, there's no real way to find out which assembly you're opening without looking at the contained namespaces, so this may take some trial and error. The modules do appear to be listed in the order they were loaded.
    - add breakpoints by clicking in the left margin of the code window  
      ![dnSpy breakpoints](public/media/img/dnSpy-breakpoints.png)
+
+# Updates
+
+## Debugging with Visual Studio
+
+`@Snea` on discord pointed out to me that you can also use the Visual Studio Debugger, which is obviously true! The VS debugger is strikingly similar to the dnSpy debugger, so I'm assuming they're either inspired by eachother, or even share the same dependencies.
+
+The VS debugger has some extra features (for example, it has an immediate window, essentially giving you a developer console), but it is also much more fiddly to set up. I was personally unable to get it to recognize _any_ symbol files for the game assemblies, let alone modded assemblies, rendering the debugger almost useless. It's likely that VS assumes we're using .NET runtimes, while in fact we're using the mono runtime. Either way, there's probably a fix - I just haven't found it yet.
+
+## Profiling with dotPeek
+
+`@Snea` also pointed out that we can attach the [dotPeek](https://www.jetbrains.com/decompiler/) profiler. I had no problems attaching this to RimWorld, and it certainly looks promising for finding performance bottlenecks.
 
 # Acknowledgements
 

@@ -56,7 +56,7 @@ then, in the the root folder of your RimWorld installation;
 - delete (or rename) `RimWorldWin64.exe`
 - rename `WindowsPlayer.exe` to `RimWorldWin64.exe`
 
-finally, in the `RimWorldWin64_Data` folder of your RimWorld installation;
+next, in the `RimWorldWin64_Data` folder of your RimWorld installation;
 
 - find or create the file `boot.config`
 - insert this line at the bottom of the file;
@@ -64,6 +64,21 @@ finally, in the `RimWorldWin64_Data` folder of your RimWorld installation;
   ```
   player-connection-debug=1
   ```
+
+**update: 2020-08-23** I forgot to mention a step...  
+finally, you'll need to add an environment variable that tells the Unity executables where to listen for a debugger.
+
+- open the start menu, and search for "environment variables".
+- open either the system or account option for setting environment variables (they're the same window)
+- in the window that opens, click `environment variables`.
+- create a new environment variable either system-wide, or for your account
+  - either way works, set it for your account only if you're on a shared computer, or have no admin access.
+- copy/paste the following details;
+  - name: `DNSPY_UNITY_DBG2`
+  - value: `--debugger-agent=transport=dt_socket,server=y,address=127.0.0.1:55555,suspend=y`
+
+Your environment should now include the new entry:  
+![Environment Variables Dialog](/public/media/img/env-variables.png)
 
 ## Patched Mono library
 
@@ -153,6 +168,11 @@ The VS debugger has some extra features (for example, it has an immediate window
 ## Profiling with dotPeek
 
 `@Snea` also pointed out that we can attach the [dotPeek](https://www.jetbrains.com/decompiler/) profiler. I had no problems attaching this to RimWorld, and it certainly looks promising for finding performance bottlenecks.
+
+## Setting Unity debug environment variables
+
+_2020-08-23_  
+Added instructions for setting the correct environment variable, which may or may not be required.
 
 # Acknowledgements
 

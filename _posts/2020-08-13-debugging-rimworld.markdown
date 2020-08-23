@@ -124,8 +124,9 @@ The final step is actually attaching the debugger.
 - in the debug menu, click "Start Debugging...".  
   Alternatively, you can also click the '▶ Start' button in the toolbar, or press <kbd>F5</kbd>  
   ![dnSpy start debugging](/public/media/img/dnSpy-start-debugging.png)
-- in the window that opens, navigate to the RimWorld executable. Leave the other settings as they are.  
-  ![dnSpy find executable](/public/media/img/dnSpy-find-executable.png)
+- in the window that opens, navigate to the RimWorld executable. Leave the other settings as they are.
+  - I've had reports that setting the debug engine to 'Unity' works for some people, whereas '.NET Framework' does not. While that makes perfect sense, I personally could not get that to work, so your mileage may vary.  
+    ![dnSpy find executable](/public/media/img/dnSpy-find-executable.png)
 - press 'OK'. RimWorld will now open, and dnSpy will have an orange border to indicate it is actively debugging.
 - check that the debugger is attached to RimWorld;
   - in the debug menu, select "windows" and then "processes".  
@@ -173,6 +174,7 @@ The VS debugger has some extra features (for example, it has an immediate window
 
 _2020-08-23_  
 Added instructions for setting the correct environment variable, which may or may not be required.
+Added note for using 'Unity' as debug engine suggested by `@Brrainz`.
 
 # Acknowledgements
 

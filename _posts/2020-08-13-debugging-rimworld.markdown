@@ -173,7 +173,7 @@ The VS debugger has some extra features (for example, it has an immediate window
 ## Setting Unity debug environment variables
 
 _2020-08-23_  
-Added instructions for setting the correct environment variable, which may or may not be required.
+Added instructions for setting the correct environment variable, which may or may not be required.  
 Added note for using 'Unity' as debug engine suggested by `@Brrainz`.
 
 # Acknowledgements
